@@ -15,7 +15,7 @@ const VAPID_KEYS = {
 };
 
 if (!VAPID_KEYS.publicKey || !VAPID_KEYS.privateKey) {
-  console.error("❌ ERROR: VAPID keys are missing in .env file!");
+  console.error("ERROR: VAPID keys are missing in .env file!");
   process.exit(1);
 }
 
@@ -50,6 +50,7 @@ app.post("/sync", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`✅ Server running on http://localhost:${PORT}`);
+  //console.log(` Server running on http://localhost:${PORT}`);
+  console.log(` Server running on https://qr-scanner-backend-yszm.onrender.com`);
 });
     
