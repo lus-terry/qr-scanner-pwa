@@ -7,7 +7,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.svg', 'favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
+      includeAssets: ['favicon.svg', 'favicon.ico', 'robots.txt', 'apple-touch-icon.png'], // Možeš ukloniti ako ti nije potrebno
       manifest: {
         name: 'My PWA App',
         short_name: 'PWA App',
@@ -17,31 +17,22 @@ export default defineConfig({
           {
             src: 'pwa-192x192.png',
             sizes: '192x192',
-            type: 'image/png'
+            type: 'image/png',
           },
           {
             src: 'pwa-512x512.png',
             sizes: '512x512',
-            type: 'image/png'
-          }
-        ]
+            type: 'image/png',
+          },
+        ],
       },
-      workbox: {
-        runtimeCaching: [
-          {
-            urlPattern: /^https:\/\/jsonplaceholder\.typicode\.com\//,
-            handler: 'CacheFirst',
-            options: {
-              cacheName: 'api-cache',
-              expiration: {
-                maxEntries: 50,
-                maxAgeSeconds: 24 * 60 * 60 // 1 dan
-              }
-            }
-          }
-        ]
-      }
-      
-    })
-  ]
+    }),
+  ],
+  define: {
+    'process.env': {}, 
+  },
+  build: {
+    outDir: 'dist', 
+    sourcemap: true, 
+  },
 });
