@@ -39,7 +39,8 @@ function App() {
 
           setSubscription(newSubscription);
 
-          await fetch("http://localhost:5050/subscribe", {
+          //await fetch("http://localhost:5050/subscribe", {
+          await fetch("https://qr-scanner-backend-yszm.onrender.com", {
             method: "POST",
             body: JSON.stringify(newSubscription),
             headers: { "Content-Type": "application/json" },
