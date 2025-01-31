@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import QRScanner from "./components/QrScanner";
-import "dotenv/config";
+
 
 //const VAPID_PUBLIC_KEY = process.env.VAPID_PUBLIC_KEY;
 const VAPID_PUBLIC_KEY = import.meta.env.VITE_VAPID_PUBLIC_KEY;
